@@ -5,9 +5,11 @@ import boto3
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1') # e.g., 'ap-south-1'
 
-users_table = dynamodb. Table("MovieMagic_Users") bookings_table = dynamodb. Table("MovieMagic_Bookings")
+users_table = dynamodb. Table("MovieMagic_Users")
+bookings_table = dynamodb. Table("MovieMagic_Bookings")
 
-sns = boto3.client('sns', region_name="us-east-1") sns_topic_arn = 'arn:aws:sns:us-east-1:724772095615:movie:e00b8ab3-1bee-47ab-8f7c-fa227bf9b544'
+sns = boto3.client('sns', region_name="us-east-1") 
+sns_topic_arn = 'arn:aws:sns:us-east-1:724772095615:movie:e00b8ab3-1bee-47ab-8f7c-fa227bf9b544'
 
 app = Flask(__name__)
 app.secret_key = 'super-secret-key'
